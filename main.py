@@ -63,7 +63,10 @@ def generate_character(number_of_characters=1, x=None):
     return complete
 
 def generate_characters(number_of_characters=None):
-    number_of_characters = get_int("How many characters would you like to generate? ")
+    number_of_characters = number_of_characters
+    if not number_of_characters:
+        number_of_characters = get_int("How many characters would you like to generate? ")
+    print(generate_character(number_of_characters))
     print(generate_character(number_of_characters))
     go_again = get_int("Do you want to generate another? 1 = Yes, 2 = No ")
     valid_inputs = [1, 2]
