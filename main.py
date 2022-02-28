@@ -6,12 +6,15 @@ def get_input(prompt = "??"):
 
 def get_int(prompt = "??"):
     result = get_input(prompt)
-    try:
-        result = int(result)
-    except:
-        print("You must enter an integer.")
-        result = get_input(prompt)
-    return result
+    while result:
+        try:
+            result = int(result)
+        except:
+            print("You must enter an integer.")
+            result = get_input(prompt)
+        else:
+            result = int(result)
+            return result
 
 def generate_character(x = None):
     while not x == 3 and not x == 4:
